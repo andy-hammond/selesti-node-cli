@@ -1,0 +1,16 @@
+{
+  "name": "dummy-brief-andy-hammond",
+  "version": "1.0.0",
+  "description": "My response to Ollie Blackmore",
+  "main": "index.js",
+  "scripts": {
+    "allOrders": "node index.js --all",
+    "oneOrder": "node index.js --id 59318212df40c0b77abd2afc"
+  },
+  "author": "andy-hammond",
+  "license": "ISC",
+  "dependencies": {
+    "fast-csv": "^2.4.1",
+    "request": "^2.85.0"
+  }
+}
