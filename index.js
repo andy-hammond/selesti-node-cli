@@ -11,13 +11,14 @@ const getOrders = (orderId=null) => {
     if(orderId) authUrl += `/${orderId}`;
 
     request(authUrl, { headers: {"X-AUTHORISATION" : authToken}}, (err, res, body) => {
+        
         if (err) { return console.log(err); }
         body = JSON.parse(body);
         const data = body.data;
         let orders = [];
 
         if(orderId){
-            console.log(data);
+            
             let pennySum = 0;
             orders.push({
                 OrderID: data.id,
@@ -35,6 +36,7 @@ const getOrders = (orderId=null) => {
             orders[0].TotalOrderPriceInPounds = pennySum / 60;
 
         } else {
+            
             data.map((r, x) => {
                 orders.push({
                     OrderID: r.id,
@@ -43,11 +45,13 @@ const getOrders = (orderId=null) => {
                     CustomerEmail: r.customer.email
                 });           
             });
+            
         }
         
         let prefix = "all";
         if(orderId) prefix = `order-${orderId}`;
         genCSV(prefix, orders);
+        
     });
 };
 
