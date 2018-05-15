@@ -7,7 +7,7 @@ A:
 
 ~~~~
 
-I am familiar with many frameworks including, listed below:
+I am familiar with the below frameworks:
 
 Laravel & Symfony
 React
